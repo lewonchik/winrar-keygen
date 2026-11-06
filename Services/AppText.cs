@@ -87,6 +87,50 @@ public sealed class AppText
         SaveDialogFilter = "Key files (*.key)|*.key|All files (*.*)|*.*"
     };
 
+	public static AppText Russian { get; } = new()
+    {
+        Username = "Имя пользователя",
+		LicenseName = "Название лицензии",
+		Encoding = "Кодировка",
+		Output = "Вывод",
+		Browse = "Обзор",
+		ActivateWinRar = "Активировать WinRAR",
+		WriteTo = "Записать в ",
+		GenerateKey = "Сгенерировать ключ",
+		Settings = "Настройки",
+		Back = "Назад",
+		CheckForUpdatesTooltip = "Проверить обновления",
+		Appearance = "Внешний вид",
+		Theme = "Тема",
+		Language = "Язык",
+		WindowsDefault = "Как в системе",
+		Light = "Светлая",
+		Dark = "Темная",
+		RememberSettings = "Запоминать настройки",
+		RememberSettingsDescription = "Сохранять настройки между сеансами",
+		AutofillLicenseName = "Автозаполнение названия лицензии",
+		AutofillLicenseNameDescription = "По умолчанию используется лицензия для одного ПК",
+		BackUpExistingKey = "Резервная копия существующего rarreg.key",
+		BackUpExistingKeyDescription = "Создать резервную копию rarreg.key (если он есть)",
+		CheckForUpdates = "Проверить обновления",
+		CheckForUpdatesDescription = "Проверять наличие новых версий на GitHub",
+		GeneratedKey = "Созданный ключ",
+		Generated = "Создано",
+		Copy = "Копировать",
+		Copied = "Скопировано",
+		KeyWrittenTo = "Ключ записан в ",
+		Saved = "Сохранено",
+		Activated = "Активировано",
+		ErrorPrefix = "Ошибка",
+		CheckingForUpdates = "Проверка обновлений",
+		LatestVersion = "У вас установлена ​​последняя версия",
+		AsciiWarning = "Присутствуют символы вне диапазона ASCII. Имя в лицензии может отображаться некорректно.",
+		AnsiWarning = "Присутствуют символы вне диапазона ASCII. Кодировка ANSI зависит от региональных настроек системы, поэтому текст может отображаться некорректно на других компьютерах.",
+		UsernameNonAsciiError = "Имя пользователя содержит символы вне диапазона ASCII. Используйте кодировку UTF-8.",
+		LicenseNameNonAsciiError = "Имя владельца лицензии содержит символы вне диапазона ASCII. Используйте кодировку UTF-8.",
+		SaveDialogFilter = "Файлы ключей (*.key)|*.key|Все файлы (*.*)|*.*"
+    };
+
     public static AppText SimplifiedChinese { get; } = new()
     {
         Username = "用户名",
@@ -132,7 +176,12 @@ public sealed class AppText
     };
 
     public static AppText FromLanguageMode(string languageMode)
-    {
-        return languageMode == "zh-CN" ? SimplifiedChinese : English;
-    }
+	{
+		return languageMode switch
+		{
+			"ru-RU" => Russian,
+			"zh-CN" => SimplifiedChinese,
+			_       => English // Английский язык по умолчанию для "en-US" или любых непредвиденных значений
+		};
+	}
 }

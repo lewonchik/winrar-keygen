@@ -90,7 +90,7 @@ foreach ($v in $variants) {
 # Normalize timestamps to the current whole hour
 $wholeHour = Get-Date -Minute 0 -Second 0 -Millisecond 0
 Write-Host ""
-Write-Host "Setting file timestamps to $($wholeHour.ToString('yyyy-MM-dd HH:mm:ss'))..." -ForegroundColor DarkGray
+Write-Host "Setting file timestamps to $($wholeHour.ToString('dd-MM-yyyy HH:mm:ss'))..." -ForegroundColor DarkGray
 foreach ($v in $variants) {
     $exe = Join-Path $OutputDir "$($v.Label)\winrar-keygen-gui.exe"
     if (Test-Path $exe) {

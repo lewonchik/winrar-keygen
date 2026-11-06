@@ -11,10 +11,10 @@
     <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
 
     <!-- Version -->
-    <Version>4.3.0</Version>
-    <FileVersion>4.3.0.0</FileVersion>
-    <AssemblyVersion>4.3.0.0</AssemblyVersion>
-    <InformationalVersion>4.3.0.0</InformationalVersion>
+    <Version>4.3.1</Version>
+    <FileVersion>4.3.1.0</FileVersion>
+    <AssemblyVersion>4.3.1.0</AssemblyVersion>
+    <InformationalVersion>4.3.1.0</InformationalVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 
@@ -22,7 +22,7 @@
     <Product>WinRAR Keygen</Product>
     <Company>WinRAR Keygen</Company>
     <Description>WinRAR Key Generation GUI</Description>
-    <Copyright>Copyright (c) 2021 Bitcookies</Copyright>
+    <Copyright>Copyright (c) 2026 Lewonchik</Copyright>
     <AssemblyTitle>WinRAR Key Generation GUI</AssemblyTitle>
 
   </PropertyGroup>
@@ -44,6 +44,6 @@
     <Resource Include="Assets\icon.ico" />
   </ItemGroup>
 
-  <Import Project="build\PatchVersionLanguage.targets" />
+  <!-- Import Project="build\PatchVersionLanguage.targets" / -->
 
 </Project>

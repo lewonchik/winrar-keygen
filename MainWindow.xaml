@@ -128,7 +128,7 @@
                                 <!-- Encoding -->
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="70" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="{Binding Text.Encoding}"

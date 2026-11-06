@@ -21,8 +21,8 @@ WinRAR Keygen GUI is a graphical companion for the [winrar-keygen](https://githu
 
 For the key generation algorithm, see [How does it work?](https://github.com/bitcookies/winrar-keygen/blob/master/README.HOW_DOES_IT_WORK.md)
 
-![Screenshot](Assets/gui-light.png#gh-light-mode-only)
-![Screenshot](Assets/gui-dark.png#gh-dark-mode-only)
+![Screenshot](assets/gui-light.png#gh-light-mode-only)
+![Screenshot](assets/gui-dark.png#gh-dark-mode-only)
 
 ## 2. Download
 

@@ -5,7 +5,7 @@ namespace WinRarKeygenGui.Services;
 
 public static class AppEnvironment
 {
-    public const string GitHubRepository = "bitcookies/winrar-keygen";
+    public const string GitHubRepository = "lewonchik/winrar-keygen";
 
     public static string ReleasesUrl => $"https://github.com/{GitHubRepository}/releases";
     public static string LatestReleaseApiUrl => $"https://api.github.com/repos/{GitHubRepository}/releases/latest";

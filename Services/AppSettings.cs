@@ -106,21 +106,37 @@ public class AppSettings
     }
 
     public static string ResolveSystemLanguageMode()
-    {
-        var culture = CultureInfo.CurrentUICulture;
-        var name = culture.Name;
-        var parentName = culture.Parent?.Name ?? "";
+	{
+		var culture = CultureInfo.CurrentUICulture;
+    
+		// Получаем ISO-код языка (всегда 2 символа в нижнем регистре, например: "zh", "ru", "en")
+		string lang = culture.TwoLetterISOLanguageName;
 
-        if (name.Equals("zh-CN", StringComparison.OrdinalIgnoreCase) ||
-            name.Equals("zh-SG", StringComparison.OrdinalIgnoreCase) ||
-            name.StartsWith("zh-Hans", StringComparison.OrdinalIgnoreCase) ||
-            parentName.Equals("zh-Hans", StringComparison.OrdinalIgnoreCase))
-        {
-            return "zh-CN";
-        }
+		// 1. Проверка для русского языка
+		if (lang.Equals("ru", StringComparison.OrdinalIgnoreCase))
+		{
+        return "ru-RU";
+		}
 
-        return "en-US";
-    }
+		// 2. Проверка для упрощенного китайского
+		if (lang.Equals("zh", StringComparison.OrdinalIgnoreCase))
+		{
+			string name = culture.Name;
+			string parentName = culture.Parent?.Name ?? "";
+
+			if (name.Equals("zh-CN", StringComparison.OrdinalIgnoreCase) ||
+				name.Equals("zh-SG", StringComparison.OrdinalIgnoreCase) ||
+				name.StartsWith("zh-Hans", StringComparison.OrdinalIgnoreCase) ||
+				parentName.Equals("zh-Hans", StringComparison.OrdinalIgnoreCase))
+			{
+				return "zh-CN";
+			}
+		}
+
+		// 3. Дефолтный язык для всех остальных локалей
+		return "en-US";
+}
+
 
     public static string NormalizeThemeMode(string? value)
     {
@@ -136,6 +152,7 @@ public class AppSettings
     {
         return value switch
         {
+			"ru-RU" => "ru-RU",
             "en-US" => "en-US",
             "zh-CN" => "zh-CN",
             _ => "System"

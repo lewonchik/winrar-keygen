@@ -148,7 +148,8 @@ public partial class MainViewModel : ObservableObject
         _languageOptions =
         [
             new("System", Text.WindowsDefault),
-            new("en-US", "English"),
+			new("en-US", "English"),
+            new("ru-RU", "Russian"),
             new("zh-CN", "简体中文")
         ];
 
@@ -500,7 +501,7 @@ public partial class MainViewModel : ObservableObject
                 // Backup existing key if enabled
                 if (BackupExistingKey && File.Exists(activatePath))
                 {
-                    string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                    string timestamp = DateTime.Now.ToString("ddMMyyyy_HHmmss");
                     string backupPath = Path.Combine(winrarDir, $"rarreg.key.{timestamp}.bak");
                     File.Copy(activatePath, backupPath, overwrite: true);
                 }
